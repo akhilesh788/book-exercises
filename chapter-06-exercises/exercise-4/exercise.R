@@ -5,11 +5,24 @@
 # than or equal to twice the length of the other.
 # Hint: compare the length difference to the length of the smaller string
 
+is_twice_as_long<-function(str1,str2){
+  val_1<-(abs(nchar(str1)-nchar(str2)))
+  print(val_1)
+  val_2<-((min(nchar(str1),nchar(str2))))
+  print(val_2)
+  return(val_1 >= val_2)
+  
+}
+
+
+?abs
 
 # Call your `is_twice_as_long` function by passing it different length strings
 # to confirm that it works. Make sure to check when _either_ argument is twice
 # as long, as well as when neither are!
 
+is_twice_as_long("abcd","jjjjj")
+is_twice_as_long("aaaa","bvbdfdbn")
 
 
 # Define a function `describe_difference` that takes in two strings. The
@@ -21,4 +34,5 @@
 
 # Call your `describe_difference` function by passing it different length strings
 # to confirm that it works. Make sure to check all 3 conditions1
+
 
