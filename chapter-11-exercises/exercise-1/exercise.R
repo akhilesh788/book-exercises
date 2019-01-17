@@ -95,6 +95,13 @@ View(min_hwy_2)
 # of that make in that year.
 # You'll need to filter more (and do some selecting)!
 
+efficiency_by_year_make2<-function(year1,make1){
+  
+  filtered_1<-vehicles[vehicles$year==year1 & vehicles$make==make1,]
+  filtered_2<-filtered_1[filtered_1$hwy==max(filtered_1$hwy),"model"]
+}
+
+
 efficiency_by_year_make<-function(year1,make1){
   
   vehicles %>% 
@@ -107,8 +114,9 @@ efficiency_by_year_make<-function(year1,make1){
 efficient_model<-efficiency_by_year_make(1984,"AM General")
 efficient_model
 
-
+efficient_model_2<-efficiency_by_year_make2(1984,"AM General")
+efficient_model_2
 
 # What was the most efficient Honda model of 1995?
 
-print(efficiency_by_year_make(1995,"Honda"))
+print(efficiency_by_year_make2(1995,"Honda"))
